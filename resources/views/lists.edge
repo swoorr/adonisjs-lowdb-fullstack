@@ -1,0 +1,23 @@
+<div id="list">
+<div class="subtitle">{{ sitename }}</div>
+
+{{ toAnchor('/home', 'Back to homepage') }}
+
+<ul>
+    @each((val,key) in list)
+        <li>{{ val.title }} {{ toAnchor('/delete/' + val.id, 'Delete') }} </li>
+    @endeach
+</ul>
+{{ toAnchor('#', 'Return top') }}
+
+
+</div>
+
+<style>
+#list li {padding:1rem; border-left:5px solid #ddd}
+li {list-style: none;list-style-type: none}
+#list .subtitle {font-size:x-large;margin-bottom:1rem}
+body {font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif}
+#list {max-width:700px;width:100%;padding:2rem}
+ul,li {margin:2rem 0;padding:0}
+</style>
